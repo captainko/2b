@@ -1,10 +1,9 @@
+import { Transaction, TransactionData, TransactionFactory } from "../interface";
 import { DepositTransaction } from "./DepositTransaction";
-import { Transaction } from "./Transaction";
-import { TransactionData } from "./TransactionData";
 import { WithdrawalTransaction } from "./WithdrawalTransaction";
 
-export class TransactionFactory {
-  public static from(data: TransactionData): Transaction {
+export class TransactionFactoryImpl implements TransactionFactory {
+  public from(data: TransactionData): Transaction {
     let result: Transaction;
     switch (data.transaction_type) {
       case "WITHDRAWAL":

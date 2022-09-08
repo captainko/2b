@@ -1,5 +1,6 @@
 import fetch from "node-fetch";
 import { Numeral } from "numeral";
+import { Currency } from "../enum/Currency";
 import Logger from "../utils/Logger";
 
 export type CurencyResponse = Record<string, number>
@@ -11,7 +12,7 @@ export class CurrencyConverter {
     return body[target];
   }
 
-  public static async convertTo(target: string, token: string, amount: Numeral) {
+  public static async convertTo(target: Currency, token: string, amount: Numeral) {
     const exRate = await CurrencyConverter.fetchExRate(target, token);
     Logger.log(`1 ${token} = ${exRate} ${target}`);
 

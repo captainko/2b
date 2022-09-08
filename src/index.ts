@@ -1,5 +1,5 @@
 import path from "path";
-import { Portfolio } from "./processor";
+import { Portfolio } from "./processors";
 import Logger from "./utils/Logger";
 
 

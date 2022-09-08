@@ -10,10 +10,10 @@ export class Portfolio {
   async execute(): Promise<void> {
     const result = await TransactionAggregrator.parseFile(this.csvPath)
 
-    const target = Currency.USD;
+    const toCurrency = Currency.USD;
     for (const [token, amount] of result) {
-      const convertedAmount: Numeral = await CurrencyConverter.convertTo(target, token, amount)
-      console.log(`${amount.value()} ${token} = ${convertedAmount.format('0.00')} ${target}`);
+      const convertedAmount: Numeral = await CurrencyConverter.convertTo(toCurrency, token, amount)
+      console.log(`${amount.value()} ${token} = ${convertedAmount.format('0.00')} ${toCurrency}`);
     }
 
   }

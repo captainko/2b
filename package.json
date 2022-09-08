@@ -1,0 +1,27 @@
+{
+  "name": "2b-boilerplate",
+  "version": "1.0.0",
+  "description": "_We're looking at your programming ability. It must not only work, it should be maintainable._",
+  "main": "./src/index.ts",
+  "scripts": {
+    "start:dev": "cross-env DEBUG=info ts-node-dev src/index.ts",
+    "start": "npm run build && node dist/index.js",
+    "build": "tsc"
+  },
+  "author": "CaptainKO",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node-fetch": "^2.6.2",
+    "currency.js": "^2.0.4",
+    "fast-csv": "^4.3.6",
+    "node-fetch": "^2.6.7",
+    "numeral": "^2.0.6"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.57",
+    "@types/numeral": "^2.0.2",
+    "cross-env": "^7.0.3",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.8.2"
+  }
+}
